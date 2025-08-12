@@ -1,0 +1,47 @@
+# Compilados de Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Archivos de log
+*.log
+
+# Archivos de configuración temporales
+*.tmp
+*.swp
+
+# Directorios de compilación
+/bin/
+/target/
+/build/
+
+# IDEs
+## IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+## Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+
+## NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Gradle
+.gradle/
+build/
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
