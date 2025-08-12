@@ -1,8 +1,8 @@
-package org.devseniorcode.ecoquest.controller;
+package org.devseniorcode.ecoquest.controllers;
 
 import java.util.Scanner;
 
-import org.devseniorcode.ecoquest.controller.mision.SelectorMisionController;
+import org.devseniorcode.ecoquest.controllers.mision.SelectorMisionController;
 
 
 public class MenuPrincipalController {

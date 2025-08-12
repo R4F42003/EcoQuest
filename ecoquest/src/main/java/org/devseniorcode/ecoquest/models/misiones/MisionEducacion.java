@@ -3,8 +3,6 @@ package org.devseniorcode.ecoquest.models.misiones;
 import java.time.LocalDate;
 import java.util.List;
 
-import org.devseniorcode.ecoquest.enums.Dificultad;
-import org.devseniorcode.ecoquest.enums.Estado;
 import org.devseniorcode.ecoquest.enums.LugarMisionEducativa;
 
 
@@ -14,12 +12,12 @@ import org.devseniorcode.ecoquest.enums.LugarMisionEducativa;
         private final LugarMisionEducativa lugarMisionEducativa;
 
 
-        public MisionEducacion(String id, String descripcion, Estado estado, List<String> puntosEcos, LocalDate fecha, Dificultad nivelDificultad,int idLugar) {
-            
-            super(id, descripcion, estado, puntosEcos, fecha, nivelDificultad);
-            this.lugarMisionEducativa = LugarMisionEducativa.fromId(idLugar);
-        
+        public MisionEducacion(String id, String descripcion, int idEstado, List<String> puntosEcos, LocalDate fecha, int idNivelDificultad, int idLugar) {
+            super(id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad);
+            this.lugarMisionEducativa = LugarMisionEducativa.fromIdLugar(idLugar);
         }
+
+        
 
         public LugarMisionEducativa getLugarMisionEducativa() {
             return lugarMisionEducativa;

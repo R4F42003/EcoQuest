@@ -15,13 +15,13 @@ public abstract class Mision {
     private LocalDate fecha;
     private Dificultad nivelDificultad;
     
-    public Mision(String id, String descripcion, Estado estado, List<String> puntosEcos, LocalDate fecha,Dificultad nivelDificultad) {
+    public Mision(String id, String descripcion, int idEstado, List<String> puntosEcos, LocalDate fecha,int idNivelDificultad) {
         this.id = id;
-        this.estado = estado;
+        this.estado = Estado.fromIdEstado(idEstado);
         this.descripcion = descripcion;
         this.puntosEcos = puntosEcos;
         this.fecha = fecha;
-        this.nivelDificultad = nivelDificultad;
+        this.nivelDificultad = Dificultad.fromIdDificultad(idNivelDificultad);
     }
 
     public String getId() {

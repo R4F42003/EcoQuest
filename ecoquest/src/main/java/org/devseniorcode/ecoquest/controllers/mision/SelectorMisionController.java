@@ -1,6 +1,7 @@
-package org.devseniorcode.ecoquest.controller.mision;
+package org.devseniorcode.ecoquest.controllers.mision;
 
 import java.util.Scanner;
+
 
 public class SelectorMisionController {
 

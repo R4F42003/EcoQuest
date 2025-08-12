@@ -28,8 +28,8 @@ public enum LugarMisionEducativa {
     public String getNombreLugar() { return nombreLugar; }
     public String getTipoPoblacion() { return tipoPoblacion; }
 
-    public static LugarMisionEducativa fromId(int id) {
-        for (var l : values()) if (l.idLugar == id) return l;
-        throw new IllegalArgumentException("Código de lugar no válido: " + id);
+    public static LugarMisionEducativa fromIdLugar(int idLugar) {
+        for (var l : values()) if (l.idLugar == idLugar) return l;
+        throw new IllegalArgumentException("Código de lugar no válido: " + idLugar);
     }
 }

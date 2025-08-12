@@ -6,7 +6,7 @@ package org.devseniorcode.ecoquest;
 
 import java.util.Scanner;
 
-import org.devseniorcode.ecoquest.controller.MenuPrincipalController;
+import org.devseniorcode.ecoquest.controllers.MenuPrincipalController;
 
 /**
  *

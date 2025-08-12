@@ -3,9 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package org.devseniorcode.ecoquest.controller.mision;
+package org.devseniorcode.ecoquest.controllers.mision;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,6 +16,7 @@ import org.devseniorcode.ecoquest.enums.LugarMisionEducativa;
 import org.devseniorcode.ecoquest.models.misiones.MisionEducacion;
 import org.devseniorcode.ecoquest.services.MisionServices;
 import org.devseniorcode.ecoquest.services.impl.MisionServiceImpl;
+import org.devseniorcode.ecoquest.utils.FechaUtils;
 
 class MisionEducacionController {
     
@@ -34,30 +36,42 @@ class MisionEducacionController {
         System.out.print("Descripción: ");
         String descripcion = scan.nextLine();
 
-        Estado estado = Estado.PROGRAMADA;
+        int idEstado = Estado.PROGRAMADA.getIdEstado();
 
         System.out.print("PuntosEco (separados por comas): ");
         String puntosEcoInput = scan.nextLine();
         List<String> puntosEcos = List.of(puntosEcoInput.split(","));
 
-        LocalDate fecha = LocalDate.now();
 
-        Dificultad dificultad = Dificultad.FACIL;
+        FechaUtils fechaUtils = new FechaUtils(scan);
+        System.out.println("Digite la fecha de la misión:");
+        LocalDate fecha = fechaUtils.leerFechaCompleta();
+
+        System.out.println("Seleccione la dificulatad: ");
+        Arrays.stream(Dificultad.values())
+            .forEach(dificultad -> System.out.println(
+                dificultad.getIdDificultad() +". " + dificultad.name() 
+            ));
+        
+
+        System.out.print("Seleccione el numero de la dificultad: ");
+        int idNivelDificultad = Integer.parseInt(scan.nextLine());
         
 
         System.out.println("Seleccione el lugar:");
-        for (LugarMisionEducativa lugar : LugarMisionEducativa.values()) {
-            System.out.println(lugar.getIdLugar() + ". " + lugar.name() +
-                            " (" + lugar.getTipoPoblacion() + ")");
-        }
+        Arrays.stream(LugarMisionEducativa.values())
+            .forEach(lugar -> System.out.println(
+            lugar.getIdLugar() + ". " + lugar.name() + " (" + lugar.getTipoPoblacion() + ")"
+        ));
 
-        System.out.print("Seleccione la id del lugar: ");
+
+        System.out.print("Seleccione el numero del lugar: ");
         int idLugar = Integer.parseInt(scan.nextLine());
 
         MisionEducacion mision = new MisionEducacion(
-            id, descripcion, estado, puntosEcos, fecha, dificultad, idLugar
+            id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad, idLugar
         );
-        
+
 
         MisionServices services = new MisionServiceImpl();
         services.agregarMisiones(mision);

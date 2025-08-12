@@ -4,23 +4,20 @@ import java.util.List;
 import java.util.Set;
 
 public class Voluntario {
-    private int ID;
+    private final int id;
     private String nombre;
     private List<String> habilidades;
     private  Set<String> misionesCompletadas;
 
-    public Voluntario(int ID, List<String> habilidades, Set<String> misionesCompletadas, String nombre) {
-        this.ID = ID;
+    public Voluntario(int id, List<String> habilidades, Set<String> misionesCompletadas, String nombre) {
+        this.id = id;
         this.nombre = nombre;
         this.habilidades = habilidades;
         this.misionesCompletadas = misionesCompletadas;
     }
 
-    public int getID() {
-        return ID;
-    }
-    public void setID(int iD) {
-        ID = iD;
+    public int getId() {
+        return id;
     }
     public String getNombre() {
         return nombre;
@@ -43,7 +40,7 @@ public class Voluntario {
 
     @Override
     public String toString() {
-        return "Voluntario [ID=" + ID + ", nombre=" + nombre + ", habilidades=" + habilidades + ", misionesCompletadas="
+        return "Voluntario [Id=" + id + ", nombre=" + nombre + ", habilidades=" + habilidades + ", misionesCompletadas="
                 + misionesCompletadas + "]";
     }
 
