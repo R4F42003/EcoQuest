@@ -1,5 +1,7 @@
 package org.devseniorcode.ecoquest.enums;
 
+import java.util.Arrays;
+
 public enum Ecosistema {
 
     TERRESTRE (1,""),
@@ -20,8 +22,10 @@ public enum Ecosistema {
     public String getNombreEcosistema(){return nombreEcosistema;}
 
     public static Ecosistema fromIdEcosistema(int idEcosistema){
-        for (var l : values()) if (l.idEcosistema == idEcosistema) return l;
-        throw new IllegalArgumentException("Código de ecosistema no válido: " + idEcosistema);
+        return Arrays.stream(values())
+        .filter(e-> e.idEcosistema == idEcosistema)
+        .findFirst()
+        .orElseThrow(()-> new IllegalArgumentException("Id de ecosistema no valido: " + idEcosistema));
     }
 }
 

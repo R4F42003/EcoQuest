@@ -2,14 +2,18 @@ package org.devseniorcode.ecoquest.controllers.mision;
 
 import java.util.Scanner;
 
+import org.devseniorcode.ecoquest.services.MisionServices;
+
 
 public class SelectorMisionController {
 
 
     private final Scanner scan;
+    private final MisionServices misionService;
 
-    public SelectorMisionController(Scanner scan) {
+    public SelectorMisionController(Scanner scan, MisionServices misionService) {
         this.scan = scan;
+        this.misionService = misionService;
     }
 
     public void  mostrarSelectorMisiones(){
@@ -29,11 +33,11 @@ public class SelectorMisionController {
 
         switch(opcion){
             case 1 ->{
-                new MisionEducacionController(scan).mostrarMisisionEducacionController();
+                new MisionEducacionController(scan, misionService).mostrarMisisionEducacionController();
                 return;
             }
             case 2 ->{
-
+                new MisionLimpiezaController(scan, misionService).mostrarMisisionLimpiezaController();
                 return;
             }
             case 3 ->{

@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package org.devseniorcode.ecoquest.controllers.mision;
 
 import java.time.LocalDate;
@@ -12,23 +7,24 @@ import java.util.Scanner;
 
 import org.devseniorcode.ecoquest.enums.Dificultad;
 import org.devseniorcode.ecoquest.enums.Estado;
-import org.devseniorcode.ecoquest.enums.LugarMisionEducativa;
-import org.devseniorcode.ecoquest.models.misiones.MisionEducacion;
+import org.devseniorcode.ecoquest.enums.TipoLimpieza;
+import org.devseniorcode.ecoquest.models.misiones.MisionLimpieza;
 import org.devseniorcode.ecoquest.services.MisionServices;
 import org.devseniorcode.ecoquest.utils.FechaUtils;
 
-class MisionEducacionController {
-    
+public class MisionLimpiezaController {
+        
     private final Scanner scan;
     private final MisionServices misionService;
-    
-    public MisionEducacionController(Scanner scan, MisionServices misionService){
+
+    public MisionLimpiezaController(Scanner scan, MisionServices misionService){
         this.scan = scan;
         this.misionService = misionService;
+
     }
 
-    public void mostrarMisisionEducacionController() {
-        System.out.println("\n== Registro de Misión Educativa ==");
+    public void mostrarMisisionLimpiezaController() {
+        System.out.println("\n== Registro de Misión de Limpieza ==");
 
         System.out.print("ID de la misión: ");
         String id = scan.nextLine();
@@ -58,20 +54,22 @@ class MisionEducacionController {
         int idNivelDificultad = Integer.parseInt(scan.nextLine());
         
 
-        System.out.println("Seleccione el lugar:");
-        Arrays.stream(LugarMisionEducativa.values())
-            .forEach(lugar -> System.out.println(
-            lugar.getIdLugar() + ". " + lugar.name() + " (" + lugar.getTipoPoblacion() + ")"
+        System.out.println("Seleccione el tipo de limpieza:");
+        Arrays.stream(TipoLimpieza.values())
+            .forEach(limpieza -> System.out.println(
+            limpieza.getIdLimpieza()  + ". " + limpieza.getNombreLimpieza() + " (" + limpieza.getDescripcionLimpieza() + ")"
         ));
 
+        System.out.print("Seleccione el numero del tipo de limpieza: ");
+        int idLimpieza = Integer.parseInt(scan.nextLine());
 
-        System.out.print("Seleccione el numero del lugar: ");
-        int idLugar = Integer.parseInt(scan.nextLine());
+        System.out.print("Digite la cantidad de basura estimaada en kilogramos(Kg): ");
+        double cantidadBasura = Double.parseDouble(scan.nextLine());
 
-      
-        MisionEducacion m = new MisionEducacion(id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad, idLugar);
+        MisionLimpieza m = new MisionLimpieza(id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad, idLimpieza, cantidadBasura);
 
         misionService.agregarMisiones(m);
+
         System.out.println("Misión registrada con éxito");
 
         System.out.println(misionService.listarMisiones());

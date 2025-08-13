@@ -1,5 +1,7 @@
 package org.devseniorcode.ecoquest.enums;
 
+import java.util.Arrays;
+
 public enum Dificultad {
 
     FACIL(1), 
@@ -15,8 +17,10 @@ public enum Dificultad {
     public int getIdDificultad(){return idDificultad;}
 
     public static Dificultad fromIdDificultad(int idDificultad){
-        for (var l : values()) if (l.idDificultad == idDificultad) return l;
-        throw new IllegalArgumentException("Codigo de dificultad no valido" + idDificultad);
+        return Arrays.stream(values())
+        .filter(e-> e.idDificultad == idDificultad)
+        .findFirst()
+        .orElseThrow(()-> new IllegalArgumentException("Id de dificultad no valido: "+ idDificultad));
     }
 
 }

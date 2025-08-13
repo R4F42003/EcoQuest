@@ -3,15 +3,18 @@ package org.devseniorcode.ecoquest.controllers;
 import java.util.Scanner;
 
 import org.devseniorcode.ecoquest.controllers.mision.SelectorMisionController;
+import org.devseniorcode.ecoquest.services.MisionServices;
 
 
 public class MenuPrincipalController {
 
     private final Scanner scan;
+    private final MisionServices misionService;
 
-    public MenuPrincipalController(Scanner scan){
+    public MenuPrincipalController(Scanner scan, MisionServices misionService){
 
         this.scan = scan;
+        this.misionService = misionService;
 
     }
 
@@ -44,7 +47,7 @@ public class MenuPrincipalController {
                     
                 }
             case 2 -> {
-                new SelectorMisionController(scan).mostrarSelectorMisiones();
+                new SelectorMisionController(scan,misionService).mostrarSelectorMisiones();
                 }
             case 3 -> {
                 
@@ -59,6 +62,9 @@ public class MenuPrincipalController {
                     
                 }
             case 7 -> {
+                    
+                }
+            case 8 -> {System.out.println("Programa Finalizado");
                     
                 }
             default -> {

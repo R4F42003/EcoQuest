@@ -7,6 +7,8 @@ package org.devseniorcode.ecoquest;
 import java.util.Scanner;
 
 import org.devseniorcode.ecoquest.controllers.MenuPrincipalController;
+import org.devseniorcode.ecoquest.services.MisionServices;
+import org.devseniorcode.ecoquest.services.impl.MisionServiceImpl;
 
 /**
  *
@@ -19,7 +21,8 @@ public class Ecoquest {
         Scanner scan = new Scanner(System.in);
 
 
-        MenuPrincipalController menuPrincipal = new MenuPrincipalController(scan);
+        MisionServices misionService = new MisionServiceImpl();
+        MenuPrincipalController menuPrincipal = new MenuPrincipalController(scan, misionService);
 
         menuPrincipal.mostrarInterfaz();   
 

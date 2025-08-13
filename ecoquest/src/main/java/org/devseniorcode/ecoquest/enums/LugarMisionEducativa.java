@@ -1,5 +1,7 @@
 package org.devseniorcode.ecoquest.enums;
 
+import java.util.Arrays;
+
 public enum LugarMisionEducativa {
 
     COLEGIOS(1, "Colegios", "Niños"),
@@ -29,7 +31,9 @@ public enum LugarMisionEducativa {
     public String getTipoPoblacion() { return tipoPoblacion; }
 
     public static LugarMisionEducativa fromIdLugar(int idLugar) {
-        for (var l : values()) if (l.idLugar == idLugar) return l;
-        throw new IllegalArgumentException("Código de lugar no válido: " + idLugar);
+        return Arrays.stream(values())
+        .filter(e -> e.idLugar == idLugar)
+        .findFirst()
+        .orElseThrow(()-> new IllegalArgumentException("Id de luga no valido: "+ idLugar));
     }
 }
