@@ -12,8 +12,8 @@ import org.devseniorcode.ecoquest.enums.LugarMisionEducativa;
         private final LugarMisionEducativa lugarMisionEducativa;
 
 
-        public MisionEducacion(String id, String descripcion, int idEstado, List<String> puntosEcos, LocalDate fecha, int idNivelDificultad, int idLugar) {
-            super(id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad);
+        public MisionEducacion(String id, String descripcion, int idEstado, List<String> puntosEcos, LocalDate fecha, int idNivelDificultad, int idTipoMision, int idLugar) {
+            super(id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad, idTipoMision);
             this.lugarMisionEducativa = LugarMisionEducativa.fromIdLugar(idLugar);
         }
 

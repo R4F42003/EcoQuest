@@ -1,47 +1,62 @@
 package org.devseniorcode.ecoquest.controllers.mision;
 
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
+import org.devseniorcode.ecoquest.enums.TipoMision;
 import org.devseniorcode.ecoquest.services.MisionServices;
 
 
 public class SelectorMisionController {
 
-
     private final Scanner scan;
     private final MisionServices misionService;
-
-    public SelectorMisionController(Scanner scan, MisionServices misionService) {
-        this.scan = scan;
+    private int idTipoMision;
+    private final String id;
+    private final String descripcion;
+    private final int idEstado;
+    private final List<String> puntosEcos;
+    private final LocalDate fecha;
+    private final int idNivelDificultad;
+ 
+    public SelectorMisionController(Scanner scan, MisionServices misionService,String id,String descripcion,int idEstado,List<String> puntosEcos, LocalDate fecha,  int idNivelDificultad ) {
+        this.descripcion = descripcion;
+        this.fecha = fecha;
+        this.id = id;
+        this.idNivelDificultad = idNivelDificultad;
         this.misionService = misionService;
+        this.puntosEcos = puntosEcos;
+        this.scan = scan;
+        this.idEstado = idEstado;
     }
+
 
     public void  mostrarSelectorMisiones(){
 
-        int opcion;
-
         System.out.println("---Selecciona el tipo de mision---");
-        System.out.println("1. Educativa");
-        System.out.println("2. Limpieza");
-        System.out.println("3. Plantacion");
-        System.out.println("4. Cancelar registro");
-        
+        Arrays.stream(TipoMision.values())
+            .forEach(tipoMision ->System.out.println(
+                tipoMision.getIdTipoMision() +". " + tipoMision.name()
+            ));
+
         do{
             System.out.print("\nSelecione la opcion que desea: ");
             String number = scan.nextLine().trim();
-            opcion = Integer.parseInt(number);
+            idTipoMision = Integer.parseInt(number);
 
-        switch(opcion){
+        switch(idTipoMision){
             case 1 ->{
-                new MisionEducacionController(scan, misionService).mostrarMisisionEducacionController();
+                new MisionEducacionController(scan, misionService,id, descripcion,idEstado,puntosEcos,fecha,idNivelDificultad,idTipoMision).mostrarMisionEducacionController();
                 return;
             }
             case 2 ->{
-                new MisionLimpiezaController(scan, misionService).mostrarMisisionLimpiezaController();
+                new MisionLimpiezaController(scan, misionService,id, descripcion,idEstado,puntosEcos,fecha,idNivelDificultad,idTipoMision).mostrarMisionLimpiezaController();
                 return;
             }
             case 3 ->{
-
+                new MisionPlantacionController(scan, misionService,id, descripcion,idEstado,puntosEcos,fecha,idNivelDificultad,idTipoMision).mostrarMisionPlantacionController();
                 return;
             }
             case 4 -> {
@@ -52,7 +67,7 @@ public class SelectorMisionController {
                 System.out.println("Numero invalido");
             }
         }
-        }while(opcion != 4);
+        }while(idTipoMision != 4);
         
 
     }

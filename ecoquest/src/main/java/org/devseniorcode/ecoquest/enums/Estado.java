@@ -14,7 +14,9 @@ public enum Estado {
         this.idEstado = idEstado;
     }
 
-    public int getIdEstado(){return idEstado;}
+    public int getIdEstado(){
+        return idEstado;
+    }
 
     public static Estado fromIdEstado(int idEstado){
         return Arrays.stream(values())

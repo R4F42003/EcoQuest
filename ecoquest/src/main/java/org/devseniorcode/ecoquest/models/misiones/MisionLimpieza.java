@@ -10,8 +10,8 @@ public class MisionLimpieza extends Mision{
     private final TipoLimpieza tipoLimpieza;
     public double  cantidadBasura;
 
-    public MisionLimpieza(String id, String descripcion, int idEstado, List<String> puntosEcos, LocalDate fecha, int idNivelDificultad, int idLimpieza, double cantidadBasura) {
-        super(id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad);
+    public MisionLimpieza(String id, String descripcion, int idEstado, List<String> puntosEcos, LocalDate fecha, int idNivelDificultad, int idTipoMision, int idLimpieza, double cantidadBasura) {
+        super(id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad, idTipoMision);
         this.tipoLimpieza = TipoLimpieza.fromIdLimpieza(idLimpieza);
         this.cantidadBasura = cantidadBasura;
     }
@@ -30,7 +30,7 @@ public class MisionLimpieza extends Mision{
 
     @Override
     public String complemento(){
-        return "tipo limpieza="+ tipoLimpieza.getNombreLimpieza()
+        return "tipo_limpieza="+ tipoLimpieza.getNombreLimpieza()
         + ", descripcion=" + tipoLimpieza.getDescripcionLimpieza()
         + ", cantidadBasura=" + cantidadBasura;
     }

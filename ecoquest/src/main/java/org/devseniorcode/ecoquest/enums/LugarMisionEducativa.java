@@ -26,9 +26,15 @@ public enum LugarMisionEducativa {
         this.tipoPoblacion = tipoPoblacion;
     }
 
-    public int getIdLugar() { return idLugar; }
-    public String getNombreLugar() { return nombreLugar; }
-    public String getTipoPoblacion() { return tipoPoblacion; }
+    public int getIdLugar() {
+        return idLugar;
+    }
+    public String getNombreLugar() {
+        return nombreLugar;
+    }
+    public String getTipoPoblacion() {
+        return tipoPoblacion;
+    }
 
     public static LugarMisionEducativa fromIdLugar(int idLugar) {
         return Arrays.stream(values())

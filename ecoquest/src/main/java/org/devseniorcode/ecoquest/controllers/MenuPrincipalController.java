@@ -2,7 +2,7 @@ package org.devseniorcode.ecoquest.controllers;
 
 import java.util.Scanner;
 
-import org.devseniorcode.ecoquest.controllers.mision.SelectorMisionController;
+import org.devseniorcode.ecoquest.controllers.mision.MisionController;
 import org.devseniorcode.ecoquest.services.MisionServices;
 
 
@@ -47,7 +47,7 @@ public class MenuPrincipalController {
                     
                 }
             case 2 -> {
-                new SelectorMisionController(scan,misionService).mostrarSelectorMisiones();
+                new MisionController(scan,misionService).mostrarMisionController();;
                 }
             case 3 -> {
                 

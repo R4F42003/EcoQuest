@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.devseniorcode.ecoquest.enums.Dificultad;
 import org.devseniorcode.ecoquest.enums.Estado;
+import org.devseniorcode.ecoquest.enums.TipoMision;
 
 public abstract class Mision {
 
@@ -14,14 +15,16 @@ public abstract class Mision {
     private List<String> puntosEcos;
     private LocalDate fecha;
     private Dificultad nivelDificultad;
+    private TipoMision tipoMision;
     
-    public Mision(String id, String descripcion, int idEstado, List<String> puntosEcos, LocalDate fecha,int idNivelDificultad) {
+    public Mision(String id, String descripcion, int idEstado, List<String> puntosEcos, LocalDate fecha,int idNivelDificultad, int idTipoMision) {
         this.id = id;
         this.estado = Estado.fromIdEstado(idEstado);
         this.descripcion = descripcion;
         this.puntosEcos = puntosEcos;
         this.fecha = fecha;
         this.nivelDificultad = Dificultad.fromIdDificultad(idNivelDificultad);
+        this.tipoMision = TipoMision.fromIdTipoMision(idTipoMision);
     }
 
     public String getId() {
@@ -59,13 +62,22 @@ public abstract class Mision {
         this.estado = estado;
     }
 
+    public TipoMision getTipoMision(){
+        return tipoMision;
+    }
+
+    public void setTipoMision(TipoMision tipoMision){
+
+        this.tipoMision = tipoMision;
+    }
+
     public abstract String complemento();
 
 
     @Override
     public String toString() {
         return "Mision [id=" + id + ", descripcion=" + descripcion + ", estado=" + estado + ", puntosEcos=" + puntosEcos
-                + ", fecha=" + fecha + ", nivelDificultad=" + nivelDificultad + complemento()+"]";
+                + ", fecha=" + fecha + ", nivelDificultad=" + nivelDificultad + ", tipoMision=" + tipoMision + ", " +complemento()+"]";
     }
 
 

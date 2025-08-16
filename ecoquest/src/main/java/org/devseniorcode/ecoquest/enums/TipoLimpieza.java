@@ -18,9 +18,15 @@ public enum TipoLimpieza {
         this.descripcionLimpieza = descripcionLimpieza;
     }
 
-    public int getIdLimpieza(){return idLimpieza;}
-    public String getNombreLimpieza(){return nombreLimpieza;}
-    public String getDescripcionLimpieza(){return descripcionLimpieza;}
+    public int getIdLimpieza(){
+        return idLimpieza;
+    }
+    public String getNombreLimpieza(){
+        return nombreLimpieza;
+    }
+    public String getDescripcionLimpieza(){
+        return descripcionLimpieza;
+    }
 
     public static TipoLimpieza fromIdLimpieza(int idLimpieza){
         return Arrays.stream(values())

@@ -10,54 +10,36 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import org.devseniorcode.ecoquest.enums.Dificultad;
-import org.devseniorcode.ecoquest.enums.Estado;
 import org.devseniorcode.ecoquest.enums.LugarMisionEducativa;
 import org.devseniorcode.ecoquest.models.misiones.MisionEducacion;
 import org.devseniorcode.ecoquest.services.MisionServices;
-import org.devseniorcode.ecoquest.utils.FechaUtils;
 
 class MisionEducacionController {
     
     private final Scanner scan;
     private final MisionServices misionService;
+    private final int idTipoMision;
+    private final String id;
+    private final String descripcion;
+    private final int idEstado;
+    private final List<String> puntosEcos;
+    private final LocalDate fecha;
+    private final int idNivelDificultad;
+
     
-    public MisionEducacionController(Scanner scan, MisionServices misionService){
-        this.scan = scan;
+    public MisionEducacionController(Scanner scan, MisionServices misionService, String id, String descripcion,int idEstado,List<String>puntosEcos, LocalDate fecha, int idNivelDificultad, int idTipoMision ) {
+        this.descripcion = descripcion;
+        this.fecha = fecha;
+        this.id = id;
+        this.idNivelDificultad = idNivelDificultad;
+        this.idTipoMision = idTipoMision;
         this.misionService = misionService;
+        this.puntosEcos = puntosEcos;
+        this.scan = scan;
+        this.idEstado = idEstado;
     }
 
-    public void mostrarMisisionEducacionController() {
-        System.out.println("\n== Registro de Misión Educativa ==");
-
-        System.out.print("ID de la misión: ");
-        String id = scan.nextLine();
-
-        System.out.print("Descripción: ");
-        String descripcion = scan.nextLine();
-
-        int idEstado = Estado.PROGRAMADA.getIdEstado();
-
-        System.out.print("PuntosEco (separados por comas): ");
-        String puntosEcoInput = scan.nextLine();
-        List<String> puntosEcos = List.of(puntosEcoInput.split(","));
-
-
-        FechaUtils fechaUtils = new FechaUtils(scan);
-        System.out.println("Digite la fecha de la misión:");
-        LocalDate fecha = fechaUtils.leerFechaCompleta();
-
-        System.out.println("Seleccione la dificultad: ");
-        Arrays.stream(Dificultad.values())
-            .forEach(dificultad -> System.out.println(
-                dificultad.getIdDificultad() +". " + dificultad.name() 
-            ));
-        
-
-        System.out.print("Seleccione el numero de la dificultad: ");
-        int idNivelDificultad = Integer.parseInt(scan.nextLine());
-        
-
+    public void mostrarMisionEducacionController() {
         System.out.println("Seleccione el lugar:");
         Arrays.stream(LugarMisionEducativa.values())
             .forEach(lugar -> System.out.println(
@@ -66,17 +48,18 @@ class MisionEducacionController {
 
 
         System.out.print("Seleccione el numero del lugar: ");
-        int idLugar = Integer.parseInt(scan.nextLine());
+        int idLugar = Integer.parseInt(scan.nextLine().trim());
 
       
-        MisionEducacion m = new MisionEducacion(id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad, idLugar);
+        MisionEducacion nuevaMision = new MisionEducacion(id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad,idTipoMision, idLugar);
 
-        misionService.agregarMisiones(m);
+        misionService.agregarMisiones(nuevaMision);
         System.out.println("Misión registrada con éxito");
 
         System.out.println(misionService.listarMisiones());
 
         
     }
+    
 
 }

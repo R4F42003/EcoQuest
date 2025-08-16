@@ -19,8 +19,6 @@ public class Ecoquest {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-
-
         MisionServices misionService = new MisionServiceImpl();
         MenuPrincipalController menuPrincipal = new MenuPrincipalController(scan, misionService);
 
