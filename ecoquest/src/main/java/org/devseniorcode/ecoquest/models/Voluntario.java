@@ -4,19 +4,19 @@ import java.util.List;
 import java.util.Set;
 
 public class Voluntario {
-    private final int id;
+    private final String id;
     private String nombre;
     private List<String> habilidades;
     private  Set<String> misionesCompletadas;
 
-    public Voluntario(int id, List<String> habilidades, Set<String> misionesCompletadas, String nombre) {
+    public Voluntario(String id, List<String> habilidades, Set<String> misionesCompletadas, String nombre) {
         this.id = id;
         this.nombre = nombre;
         this.habilidades = habilidades;
         this.misionesCompletadas = misionesCompletadas;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
     public String getNombre() {

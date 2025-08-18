@@ -3,18 +3,22 @@ package org.devseniorcode.ecoquest.controllers;
 import java.util.Scanner;
 
 import org.devseniorcode.ecoquest.controllers.mision.MisionController;
+import org.devseniorcode.ecoquest.controllers.voluntario.AgregarVoluntarioController;
 import org.devseniorcode.ecoquest.services.MisionServices;
+import org.devseniorcode.ecoquest.services.VoluntarioService;
 
 
 public class MenuPrincipalController {
 
     private final Scanner scan;
     private final MisionServices misionService;
+    private final VoluntarioService voluntarioService;
 
-    public MenuPrincipalController(Scanner scan, MisionServices misionService){
+    public MenuPrincipalController(Scanner scan, MisionServices misionService, VoluntarioService voluntarioService){
 
         this.scan = scan;
         this.misionService = misionService;
+        this.voluntarioService = voluntarioService;         
 
     }
 
@@ -44,10 +48,10 @@ public class MenuPrincipalController {
         
         switch (opcion) {
             case 1 -> {
-                    
+                new AgregarVoluntarioController(scan,voluntarioService).mostrarAgregarVoluntarioController();
                 }
             case 2 -> {
-                new MisionController(scan,misionService).mostrarMisionController();;
+                new MisionController(scan,misionService).mostrarMisionController();
                 }
             case 3 -> {
                 
