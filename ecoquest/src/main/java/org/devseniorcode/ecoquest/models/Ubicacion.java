@@ -2,28 +2,28 @@ package org.devseniorcode.ecoquest.models;
 
 public class Ubicacion {    
 
-    private int latitud;
-    private int longitud;
+    private double latitud;
+    private double longitud;
 
-    public Ubicacion(int latitud, int longitud){
+    public Ubicacion(double latitud, double longitud){
         this.longitud = longitud;
         this.latitud = latitud;
 
     }
 
-    public int getLatitud() {
+    public double getLatitud() {
         return latitud;
     }
 
-    public void setLatitud(int latitud) {
+    public void setLatitud(double latitud) {
         this.latitud = latitud;
     }
 
-    public int getLongitud() {
+    public double getLongitud() {
         return longitud;
     }
 
-    public void setLongitud(int longitud) {
+    public void setLongitud(double longitud) {
         this.longitud = longitud;
     }
 

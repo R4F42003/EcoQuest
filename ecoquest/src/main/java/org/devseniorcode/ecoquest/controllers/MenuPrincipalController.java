@@ -40,7 +40,7 @@ public class MenuPrincipalController {
         System.out.println("/---------|ECOQUEST MENU|---------\\");
         System.out.println("1. Registrar voluntario");
         System.out.println("2. Registrar mision");
-        System.out.println("3. Registrar punto eco");
+        System.out.println("3. Registrar punto ecologico");
         System.out.println("4. Asignar voluntarios a mision");
         System.out.println("5. Completar mision");
         System.out.println("6. Buscar voluntarios por habilidad");

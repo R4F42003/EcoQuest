@@ -41,7 +41,7 @@ public class AgregarMisionPlantacionController {
             + "(" + ZonaPlantacion.getDescripcion() +")"
         ));
 
-        System.out.print("Seleccione el numero de la zona deseada ");
+        System.out.print("Seleccione el numero de la zona deseada: ");
         int idZonaPlantacion = Integer.parseInt(scan.nextLine());
 
         System.out.print("Digite la cantidad de plantas estimadas a plantar: ");

@@ -19,12 +19,12 @@ public class AgregarVoluntarioController {
     }
 
     public void mostrarAgregarVoluntarioController(){
-        System.out.println("Digite el id:");
+        System.out.print("Digite el id: ");
         String id = scan.nextLine();
-        System.out.println("Digite el nombre completo");
+        System.out.print("Digite el nombre completo: ");
         String nombre = scan.nextLine();
 
-        System.out.println("Digite las habilidades (separadas por comas)");
+        System.out.print("Digite las habilidades (separadas por comas): ");
         String habilidadesInput =scan.nextLine();
 
         Set<String> habilidades = new HashSet<>();
