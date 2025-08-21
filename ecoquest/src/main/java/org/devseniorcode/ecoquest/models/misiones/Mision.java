@@ -7,6 +7,21 @@ import org.devseniorcode.ecoquest.enums.Dificultad;
 import org.devseniorcode.ecoquest.enums.Estado;
 import org.devseniorcode.ecoquest.enums.TipoMision;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.EXISTING_PROPERTY, // usa un campo que ya está en el JSON
+    property = "idTipoMision",                   // discriminador: 1=EDUCACION, 2=LIMPIEZA, 3=PLANTACION
+    visible = true                               // deja disponible el valor para el constructor super(...)
+)
+@JsonSubTypes({
+    @JsonSubTypes.Type(value = MisionEducacion.class,  name = "1"),
+    @JsonSubTypes.Type(value = MisionLimpieza.class,   name = "2"),
+    @JsonSubTypes.Type(value = MisionPlantacion.class, name = "3")
+})
+
 public abstract class Mision {
 
     private final String id;
@@ -16,6 +31,10 @@ public abstract class Mision {
     private LocalDate fecha;
     private Dificultad nivelDificultad;
     private TipoMision tipoMision;
+
+    protected  Mision(){
+        this.id = null;
+    }
     
     public Mision(String id, String descripcion, int idEstado, List<String> puntosEcos, LocalDate fecha,int idNivelDificultad, int idTipoMision) {
         this.id = id;
@@ -56,6 +75,7 @@ public abstract class Mision {
         this.nivelDificultad = nivelDificultad;
     }
     public Estado getEstado() {
+
         return estado;
     }
     public void setEstado(Estado estado) {

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "PE001",
+    "nombre": "Parque Nacional Natural Tayrona",
+    "tipoEcosistema": "ACUATICO",
+    "ubicacion": { "latitud": 11.3, "longitud": -74.1 }
+  },
+  {
+    "id": "PE002",
+    "nombre": "Caño Cristales",
+    "tipoEcosistema": "ACUATICO",
+    "ubicacion": { "latitud": 2.643, "longitud": -73.762 }
+  },
+  {
+    "id": "PE003",
+    "nombre": "Sierra Nevada de Santa Marta",
+    "tipoEcosistema": "TERRESTRE",
+    "ubicacion": { "latitud": 10.85, "longitud": -73.7 }
+  },
+  {
+    "id": "PE004",
+    "nombre": "Desierto de la Tatacoa",
+    "tipoEcosistema": "TERRESTRE",
+    "ubicacion": { "latitud": 3.215, "longitud": -75.18 }
+  },
+  {
+    "id": "PE005",
+    "nombre": "Amazonas Colombiano",
+    "tipoEcosistema": "TERRESTRE",
+    "ubicacion": { "latitud": -3.75, "longitud": -70.3 }
+  },
+  {
+    "id": "PE006",
+    "nombre": "Islas del Rosario",
+    "tipoEcosistema": "ACUATICO",
+    "ubicacion": { "latitud": 10.18, "longitud": -75.75 }
+  },
+  {
+    "id": "PE007",
+    "nombre": "Nevado del Ruiz",
+    "tipoEcosistema": "TERRESTRE",
+    "ubicacion": { "latitud": 4.9, "longitud": -75.3 }
+  },
+  {
+    "id": "PE008",
+    "nombre": "Laguna de Tota",
+    "tipoEcosistema": "ACUATICO",
+    "ubicacion": { "latitud": 5.55, "longitud": -72.92 }
+  },
+  {
+    "id": "PE009",
+    "nombre": "Santuario de Fauna y Flora Malpelo",
+    "tipoEcosistema": "ACUATICO",
+    "ubicacion": { "latitud": 4.0, "longitud": -81.6 }
+  },
+  {
+    "id": "PE010",
+    "nombre": "Parque Nacional Natural Chiribiquete",
+    "tipoEcosistema": "TERRESTRE",
+    "ubicacion": { "latitud": 0.75, "longitud": -72.55 }
+  },
+  {
+    "id": "PE011",
+    "nombre": "Jardín Botánico de Bogotá",
+    "tipoEcosistema": "URBANO",
+    "ubicacion": { "latitud": 4.676, "longitud": -74.05 }
+  },
+  {
+    "id": "PE012",
+    "nombre": "Parque Simón Bolívar (Bogotá)",
+    "tipoEcosistema": "URBANO",
+    "ubicacion": { "latitud": 4.658, "longitud": -74.093 }
+  },
+  {
+    "id": "PE013",
+    "nombre": "Café de Quindío (Zona cafetera)",
+    "tipoEcosistema": "RURAL",
+    "ubicacion": { "latitud": 4.52, "longitud": -75.7 }
+  },
+  {
+    "id": "PE014",
+    "nombre": "Valle del Cocora",
+    "tipoEcosistema": "RURAL",
+    "ubicacion": { "latitud": 4.637, "longitud": -75.5 }
+  },
+  {
+    "id": "PE015",
+    "nombre": "Medellín - Corredor Verde del Río",
+    "tipoEcosistema": "MIXTO",
+    "ubicacion": { "latitud": 6.244, "longitud": -75.581 }
+  },
+  {
+    "id": "PE016",
+    "nombre": "Cartagena de Indias - Centro Histórico",
+    "tipoEcosistema": "MIXTO",
+    "ubicacion": { "latitud": 10.422, "longitud": -75.55 }
+  },
+  {
+    "id": "PE017",
+    "nombre": "Parque Nacional Natural Amacayacu",
+    "tipoEcosistema": "TERRESTRE",
+    "ubicacion": { "latitud": -3.8, "longitud": -70.3 }
+  },
+  {
+    "id": "PE018",
+    "nombre": "Humedal La Conejera (Bogotá)",
+    "tipoEcosistema": "URBANO",
+    "ubicacion": { "latitud": 4.754, "longitud": -74.123 }
+  },
+  {
+    "id": "PE019",
+    "nombre": "Laguna de Guatavita",
+    "tipoEcosistema": "ACUATICO",
+    "ubicacion": { "latitud": 4.933, "longitud": -73.75 }
+  },
+  {
+    "id": "PE020",
+    "nombre": "Zona Cafetera - Paisajes Culturales",
+    "tipoEcosistema": "RURAL",
+    "ubicacion": { "latitud": 4.63, "longitud": -75.57 }
+  }
+]

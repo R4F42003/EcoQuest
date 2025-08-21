@@ -45,9 +45,11 @@ public class AgregarMisionLimpiezaController {
         int idLimpieza = Integer.parseInt(scan.nextLine());
 
         System.out.print("Digite la cantidad de basura estimaada en kilogramos(Kg): ");
-        double cantidadBasura = Double.parseDouble(scan.nextLine());
+        double cantExtBasuraRecogida = Double.parseDouble(scan.nextLine());
 
-        MisionLimpieza nuevaMision = new MisionLimpieza(id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad, idTipoMision, idLimpieza, cantidadBasura);
+        double cantBasuraRecogida = 0;
+
+        MisionLimpieza nuevaMision = new MisionLimpieza(id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad, idTipoMision, idLimpieza, cantExtBasuraRecogida, cantBasuraRecogida);
 
         misionService.agregarMisiones(nuevaMision);
 

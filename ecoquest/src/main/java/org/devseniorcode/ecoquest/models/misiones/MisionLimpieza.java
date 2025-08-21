@@ -5,33 +5,58 @@ import java.util.List;
 
 import org.devseniorcode.ecoquest.enums.TipoLimpieza;
 
-public class MisionLimpieza extends Mision{
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class MisionLimpieza extends Mision {
 
     private final TipoLimpieza tipoLimpieza;
-    public double  cantidadBasura;
+    private double cantExtBasuraRecogida;
+    private double cantBasuraRecogida;
 
-    public MisionLimpieza(String id, String descripcion, int idEstado, List<String> puntosEcos, LocalDate fecha, int idNivelDificultad, int idTipoMision, int idLimpieza, double cantidadBasura) {
+    @JsonCreator
+    public MisionLimpieza(
+        @JsonProperty("id") String id,
+        @JsonProperty("descripcion") String descripcion,
+        @JsonProperty("idEstado") int idEstado,
+        @JsonProperty("puntosEcos") List<String> puntosEcos,
+        @JsonProperty("fecha") LocalDate fecha,
+        @JsonProperty("idNivelDificultad") int idNivelDificultad,
+        @JsonProperty("idTipoMision") int idTipoMision,     // discriminador (2)
+        @JsonProperty("idLimpieza") int idLimpieza,         // enum via fromId
+        @JsonProperty("cantExtBasuraRecogida") double cantExtBasuraRecogida,
+        @JsonProperty("cantBasuraRecogida") double cantBasuraRecogida
+    ) {
         super(id, descripcion, idEstado, puntosEcos, fecha, idNivelDificultad, idTipoMision);
         this.tipoLimpieza = TipoLimpieza.fromIdLimpieza(idLimpieza);
-        this.cantidadBasura = cantidadBasura;
+        this.cantExtBasuraRecogida = cantExtBasuraRecogida;
+        this.cantBasuraRecogida = cantBasuraRecogida;
     }
 
-    public TipoLimpieza getTipoLimpieza(){
+    public TipoLimpieza getTipoLimpieza() {
         return tipoLimpieza;
     }
 
-    public double getCantidadBasura(){
-        return cantidadBasura;
+    public double getCantExtBasuraRecogida() {
+        return cantExtBasuraRecogida;
     }
 
-    public void  setCantidadBasura(double cantidadBasura){
-        this.cantidadBasura = cantidadBasura;
+    public void setCantExtBasuraRecogida(double cantExtBasuraRecogida) {
+        this.cantExtBasuraRecogida = cantExtBasuraRecogida;
+    }
+
+    public double getCantBasuraRecogida() {
+        return cantBasuraRecogida;
+    }
+
+    public void setCantBasuraRecogida(double cantBasuraRecogida) {
+        this.cantBasuraRecogida = cantBasuraRecogida;
     }
 
     @Override
-    public String complemento(){
-        return "tipo_limpieza="+ tipoLimpieza.getNombreLimpieza()
-        + ", descripcion=" + tipoLimpieza.getDescripcionLimpieza()
-        + ", cantidadBasura=" + cantidadBasura;
+    public String complemento() {
+        return "tipoLimpieza=" + tipoLimpieza.getNombreLimpieza()
+             + ", cantExtBasuraRecogida=" + cantExtBasuraRecogida
+             + ", cantBasuraRecogida=" + cantBasuraRecogida;
     }
 }

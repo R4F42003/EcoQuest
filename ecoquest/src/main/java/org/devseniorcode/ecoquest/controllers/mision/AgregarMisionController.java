@@ -9,6 +9,7 @@ import java.util.Scanner;
 import org.devseniorcode.ecoquest.enums.Dificultad;
 import org.devseniorcode.ecoquest.enums.Estado;
 import org.devseniorcode.ecoquest.services.MisionServices;
+import org.devseniorcode.ecoquest.services.PuntoEcologicoService;
 import org.devseniorcode.ecoquest.utils.FechaUtils;
 
 public class AgregarMisionController {
@@ -16,10 +17,12 @@ public class AgregarMisionController {
     
     private final Scanner scan;
     private final MisionServices misionService;
+    private final PuntoEcologicoService puntoEcologicoService;
 
-    public AgregarMisionController(Scanner scan, MisionServices misionService) {
+    public AgregarMisionController(Scanner scan, MisionServices misionService, PuntoEcologicoService puntoEcologicoService) {
         this.scan = scan;
         this.misionService = misionService;
+        this.puntoEcologicoService = puntoEcologicoService;
     }
 
     public void mostrarAgregarMisionController(){
@@ -34,7 +37,10 @@ public class AgregarMisionController {
 
         int idEstado = Estado.PROGRAMADA.getIdEstado();
 
-        System.out.print("PuntosEco (separados por comas): ");
+        puntoEcologicoService.listarPuntosEcologicos()
+            .forEach(p -> System.out.println("Id: " + p.getId() + " ,Nombre: " + p.getNombre()));
+
+        System.out.print("Registre el id de los puntos ecologicos a visitar (separados por comas): ");
         String puntosEcoInput = scan.nextLine();
 
         List<String> puntosEcos = new ArrayList<>();
@@ -58,8 +64,6 @@ public class AgregarMisionController {
         int idNivelDificultad = Integer.parseInt(scan.nextLine());
 
         new SelectorMisionController(scan, misionService,id, descripcion,idEstado,puntosEcos,fecha, idNivelDificultad).mostrarSelectorMisiones();
-        
-
 
 
     }

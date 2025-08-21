@@ -19,7 +19,7 @@ import org.devseniorcode.ecoquest.services.impl.VoluntarioServiceImpl;
  * @author jorao
  */
 public class Ecoquest {
-
+    
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -33,3 +33,4 @@ public class Ecoquest {
         scan.close();
     }
 }
+    

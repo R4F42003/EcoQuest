@@ -1,5 +1,6 @@
 package org.devseniorcode.ecoquest.services.impl;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -8,10 +9,13 @@ import java.util.Map;
 import org.devseniorcode.ecoquest.models.Voluntario;
 import org.devseniorcode.ecoquest.services.VoluntarioService;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class VoluntarioServiceImpl implements  VoluntarioService{
 
     private final Map<String, Voluntario> voluntarios = new LinkedHashMap<>();    
-/**
+
     public VoluntarioServiceImpl(){
         cargarVoluntariosJson();
     }
@@ -27,7 +31,7 @@ public class VoluntarioServiceImpl implements  VoluntarioService{
             throw new RuntimeException("Error cargando "+ nombreArchivo, e);
         }
     }
-*/
+    
     @Override
     public void agregarVoluntarios(Voluntario voluntario){
         voluntarios.put(voluntario.getId(), voluntario);

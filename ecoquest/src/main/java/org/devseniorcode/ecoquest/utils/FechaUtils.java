@@ -40,7 +40,6 @@ public class FechaUtils {
         Arrays.stream(Month.values())
             .forEach(m -> {
                 String mes = m.getDisplayName(TextStyle.FULL, localeEs);
-                // Primera letra mayúscula, resto minúscula
                 mes = mes.substring(0, 1).toUpperCase() + mes.substring(1).toLowerCase();
                 System.out.printf("%2d. %s%n", m.getValue(), mes);
             });

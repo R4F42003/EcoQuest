@@ -1,5 +1,6 @@
 package org.devseniorcode.ecoquest.services.impl;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,10 +9,13 @@ import java.util.Map;
 import org.devseniorcode.ecoquest.models.PuntoEco;
 import org.devseniorcode.ecoquest.services.PuntoEcologicoService;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class PuntoEcologicoServiceImpl implements PuntoEcologicoService{
     
     private final Map<String, PuntoEco> puntosEcos = new HashMap<>();    
-/**
+    
     public PuntoEcologicoServiceImpl(){
         cargarPuntosEcologicosJson();
     }
@@ -27,7 +31,6 @@ public class PuntoEcologicoServiceImpl implements PuntoEcologicoService{
             throw new RuntimeException("Error cargando "+ nombreArchivo, e);
         }
     }
-*/
     @Override
     public void agregarPuntosEcologicos(PuntoEco puntoEco){
         puntosEcos.put(puntoEco.getId(), puntoEco);

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "V001",
+    "nombre": "Ana Torres",
+    "habilidades": ["Reciclaje", "Charlas educativas"],
+    "misionesAsignadas": ["M001", "M014", "M016"],
+    "misionesCompletadas": ["M014"]
+  },
+  {
+    "id": "V002",
+    "nombre": "Carlos Gómez",
+    "habilidades": ["Limpieza de ríos", "Organización comunitaria"],
+    "misionesAsignadas": ["M002", "M014", "M016"],
+    "misionesCompletadas": ["M016"]
+  },
+  {
+    "id": "V003",
+    "nombre": "Mariana López",
+    "habilidades": ["Plantación", "Reforestación"],
+    "misionesAsignadas": ["M003", "M014", "M016"],
+    "misionesCompletadas": ["M014", "M016"]
+  },
+  {
+    "id": "V004",
+    "nombre": "Juan Herrera",
+    "habilidades": ["Educación ambiental", "Huertas urbanas"],
+    "misionesAsignadas": ["M004", "M014"],
+    "misionesCompletadas": ["M014"]
+  },
+  {
+    "id": "V005",
+    "nombre": "Sofía Ramírez",
+    "habilidades": ["Charlas escolares", "Clasificación de residuos"],
+    "misionesAsignadas": ["M005", "M016"],
+    "misionesCompletadas": ["M016"]
+  },
+  {
+    "id": "V006",
+    "nombre": "Mateo Fernández",
+    "habilidades": ["Reforestación", "Trabajo en equipo"],
+    "misionesAsignadas": ["M006", "M014", "M016"],
+    "misionesCompletadas": ["M014", "M016"]
+  },
+  {
+    "id": "V007",
+    "nombre": "Laura Martínez",
+    "habilidades": ["Reciclaje creativo", "Huertas urbanas"],
+    "misionesAsignadas": ["M007", "M014"],
+    "misionesCompletadas": ["M014"]
+  },
+  {
+    "id": "V008",
+    "nombre": "Andrés Díaz",
+    "habilidades": ["Educación ambiental", "Liderazgo"],
+    "misionesAsignadas": ["M008", "M016"],
+    "misionesCompletadas": ["M016"]
+  },
+  {
+    "id": "V009",
+    "nombre": "Valentina Castro",
+    "habilidades": ["Gestión comunitaria", "Reforestación"],
+    "misionesAsignadas": ["M009", "M014", "M016"],
+    "misionesCompletadas": ["M014"]
+  },
+  {
+    "id": "V010",
+    "nombre": "Felipe Rojas",
+    "habilidades": ["Charlas educativas", "Organización"],
+    "misionesAsignadas": ["M010", "M014", "M016"],
+    "misionesCompletadas": ["M016"]
+  },
+  {
+    "id": "V011",
+    "nombre": "Isabela Morales",
+    "habilidades": ["Reciclaje", "Huertas urbanas"],
+    "misionesAsignadas": ["M011", "M014"],
+    "misionesCompletadas": ["M014", "M016"]
+  },
+  {
+    "id": "V012",
+    "nombre": "Diego Vargas",
+    "habilidades": ["Limpieza de quebradas", "Reforestación"],
+    "misionesAsignadas": ["M012", "M016"],
+    "misionesCompletadas": ["M016"]
+  },
+  {
+    "id": "V013",
+    "nombre": "Camila Rodríguez",
+    "habilidades": ["Charlas escolares", "Gestión comunitaria"],
+    "misionesAsignadas": ["M013", "M014"],
+    "misionesCompletadas": ["M014"]
+  },
+  {
+    "id": "V014",
+    "nombre": "Santiago Pérez",
+    "habilidades": ["Reforestación", "Clasificación de residuos"],
+    "misionesAsignadas": ["M014", "M016"],
+    "misionesCompletadas": ["M014", "M016"]
+  },
+  {
+    "id": "V015",
+    "nombre": "Daniela Cárdenas",
+    "habilidades": ["Educación ambiental", "Organización comunitaria"],
+    "misionesAsignadas": ["M015", "M016"],
+    "misionesCompletadas": ["M016"]
+  },
+  {
+    "id": "V016",
+    "nombre": "Alejandro Ruiz",
+    "habilidades": ["Plantación", "Huertas urbanas"],
+    "misionesAsignadas": ["M016", "M014"],
+    "misionesCompletadas": ["M014", "M016"]
+  },
+  {
+    "id": "V017",
+    "nombre": "Juliana Méndez",
+    "habilidades": ["Charlas educativas", "Reciclaje"],
+    "misionesAsignadas": ["M017", "M014"],
+    "misionesCompletadas": ["M014"]
+  },
+  {
+    "id": "V018",
+    "nombre": "Samuel Torres",
+    "habilidades": ["Limpieza de playas", "Reforestación"],
+    "misionesAsignadas": ["M018", "M016"],
+    "misionesCompletadas": ["M016"]
+  },
+  {
+    "id": "V019",
+    "nombre": "Gabriela Herrera",
+    "habilidades": ["Charlas escolares", "Huertas urbanas"],
+    "misionesAsignadas": ["M019", "M014"],
+    "misionesCompletadas": ["M014"]
+  },
+  {
+    "id": "V020",
+    "nombre": "Nicolás Jiménez",
+    "habilidades": ["Gestión comunitaria", "Organización"],
+    "misionesAsignadas": ["M020", "M014", "M016"],
+    "misionesCompletadas": ["M014", "M016"]
+  }
+]

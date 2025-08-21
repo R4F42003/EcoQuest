@@ -3,11 +3,14 @@ package org.devseniorcode.ecoquest.models;
 import java.util.Set;
 
 public class Voluntario {
-    private final String id;
+    private String id;
     private String nombre;
     private Set<String> habilidades;
     private  Set<String> misionesAsignadas;
     private  Set<String> misionesCompletadas;
+    
+    public Voluntario(){
+    }
 
     public Voluntario(String id, String nombre, Set<String> habilidades, Set<String> misionesAsignadas, Set<String> misionesCompletadas) {
         this.id = id;
@@ -16,7 +19,7 @@ public class Voluntario {
         this.misionesAsignadas = misionesAsignadas;
         this.misionesCompletadas = misionesCompletadas;
     }
-
+   
     public String getId() {
         return id;
     }

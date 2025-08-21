@@ -20,11 +20,12 @@ public class AgregarPuntoEcologicoController{
 
     public void mostrarAgregarPuntoEcologicoController(){
 
+        System.out.println("\n== Registrar Punto Ecologico ==");
         System.out.print("Digite el id: ");
         String id = scan.nextLine();
         System.out.print("Digite el nombre: ");
         String nombre = scan.nextLine();
-        System.out.print("Digite el ecosistema: ");
+        System.out.println("Digite el ecosistema: ");
           Arrays.stream(Ecosistema.values())
             .forEach(Ecosistema -> System.out.println(
             Ecosistema.getIdEcosistema()  + ". " + Ecosistema.getNombreEcosistema()
@@ -32,7 +33,7 @@ public class AgregarPuntoEcologicoController{
         ));
         System.out.print("Seleccione el numero del ecosistema deseado: ");
         int idEcosistema = Integer.parseInt(scan.nextLine());
-        System.out.print("Digite la ubicacion: ");
+        System.out.println("Digite la ubicacion: ");
         System.out.print("Latitud: ");
         double Latitud = Double.parseDouble(scan.nextLine());
         System.out.print("Longitud: ");
@@ -44,7 +45,7 @@ public class AgregarPuntoEcologicoController{
         puntoEcologicoService.agregarPuntosEcologicos(nuevoPuntoEco);
         System.out.print("Punto Ecologico registrado correctamente");
         
-        System.out.print(puntoEcologicoService.listarPuntosEcologicos());
+        System.out.println(puntoEcologicoService.listarPuntosEcologicos());
 
 
     }

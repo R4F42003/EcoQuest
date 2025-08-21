@@ -9,6 +9,9 @@ public class PuntoEco {
     private Ecosistema tipoEcosistema;
     private Ubicacion ubicacion;
 
+    public PuntoEco() {
+    }
+    
     public PuntoEco(String id, String nombre, int idEcosistema, Ubicacion ubicacion){
         this.id = id;
         this.nombre = nombre;
