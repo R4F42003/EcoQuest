@@ -1,6 +1,7 @@
 package org.devseniorcode.ecoquest.controllers.mision;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -35,10 +36,15 @@ public class MisionController {
 
         System.out.print("PuntosEco (separados por comas): ");
         String puntosEcoInput = scan.nextLine();
-        List<String> puntosEcos = List.of(puntosEcoInput.split(","));
 
+        List<String> puntosEcos = new ArrayList<>();
+        for (String s : puntosEcoInput.split("\\s*,\\s*")) {
+            if (!s.isBlank()) {
+                puntosEcos.add(s);
+            }
+}
 
-        FechaUtils fechaUtils = new FechaUtils(scan);
+         FechaUtils fechaUtils = new FechaUtils(scan);
         System.out.println("Digite la fecha de la misión:");
         LocalDate fecha = fechaUtils.leerFechaCompleta();
 

@@ -1,11 +1,5 @@
 package org.devseniorcode.ecoquest.services.impl;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -17,7 +11,7 @@ import org.devseniorcode.ecoquest.services.MisionServices;
 public class MisionServiceImpl implements MisionServices{
 
     private final Map<String, Mision> misiones = new LinkedHashMap<>();
-
+/*
     public MisionServiceImpl(){
         cargarMisionesJson();
     }
@@ -37,7 +31,7 @@ public class MisionServiceImpl implements MisionServices{
             throw new RuntimeException("Error cargando " + nombreArchivo, e);
         }
     }
-
+*/
     @Override
     public void agregarMisiones(Mision mision){
         misiones.put(mision.getId(), mision);

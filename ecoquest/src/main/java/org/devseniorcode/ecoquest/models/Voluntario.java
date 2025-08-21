@@ -1,18 +1,19 @@
 package org.devseniorcode.ecoquest.models;
 
-import java.util.List;
 import java.util.Set;
 
 public class Voluntario {
     private final String id;
     private String nombre;
-    private List<String> habilidades;
+    private Set<String> habilidades;
+    private  Set<String> misionesAsignadas;
     private  Set<String> misionesCompletadas;
 
-    public Voluntario(String id, List<String> habilidades, Set<String> misionesCompletadas, String nombre) {
+    public Voluntario(String id, String nombre, Set<String> habilidades, Set<String> misionesAsignadas, Set<String> misionesCompletadas) {
         this.id = id;
         this.nombre = nombre;
         this.habilidades = habilidades;
+        this.misionesAsignadas = misionesAsignadas;
         this.misionesCompletadas = misionesCompletadas;
     }
 
@@ -25,12 +26,20 @@ public class Voluntario {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public List<String> getHabilidades() {
+    public Set<String> getHabilidades() {
         return habilidades;
     }
-    public void setHabilidades(List<String> habilidades) {
+    public void setHabilidades(Set<String> habilidades) {
         this.habilidades = habilidades;
     }
+        public Set<String> getMisionesAsignadas() {
+        return misionesAsignadas;
+    }
+
+    public void setMisionesAsignadas(Set<String> misionesAsignadas) {
+        this.misionesAsignadas = misionesAsignadas;
+    }
+
     public Set<String> getMisionesCompletadas() {
         return misionesCompletadas;
     }
@@ -40,9 +49,10 @@ public class Voluntario {
 
     @Override
     public String toString() {
-        return "Voluntario [Id=" + id + ", nombre=" + nombre + ", habilidades=" + habilidades + ", misionesCompletadas="
-                + misionesCompletadas + "]";
+        return "Voluntario [id=" + id + ", nombre=" + nombre + ", habilidades=" + habilidades + ", misionesAsignadas="
+                + misionesAsignadas + ", misionesCompletadas=" + misionesCompletadas + "]";
     }
+
 
     
 
