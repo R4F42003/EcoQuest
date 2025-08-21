@@ -13,10 +13,10 @@ public class VoluntarioServiceImpl implements  VoluntarioService{
     private final Map<String, Voluntario> voluntarios = new LinkedHashMap<>();    
 /**
     public VoluntarioServiceImpl(){
-        cargarVoluntarios();
+        cargarVoluntariosJson();
     }
 
-    private void cargarVoluntarios(){
+    private void cargarVoluntariosJson(){
         String nombreArchivo = "voluntarios.json";
         try(InputStream is = getClass().getClassLoader().getResourceAsStream(nombreArchivo)){
             if(is == null) throw new IllegalArgumentException("No se encontro " + nombreArchivo + " en resources");
@@ -44,5 +44,4 @@ public class VoluntarioServiceImpl implements  VoluntarioService{
     public Voluntario buscarPorId(String id){
         return voluntarios.get(id);
     }
-
 }

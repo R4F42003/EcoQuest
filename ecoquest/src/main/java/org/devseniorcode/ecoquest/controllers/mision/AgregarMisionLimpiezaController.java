@@ -9,7 +9,7 @@ import org.devseniorcode.ecoquest.enums.TipoLimpieza;
 import org.devseniorcode.ecoquest.models.misiones.MisionLimpieza;
 import org.devseniorcode.ecoquest.services.MisionServices;
 
-public class MisionLimpiezaController {
+public class AgregarMisionLimpiezaController {
         
     private final Scanner scan;
     private final MisionServices misionService;
@@ -21,7 +21,7 @@ public class MisionLimpiezaController {
     private final LocalDate fecha;
     private final int idNivelDificultad;
 
-    public MisionLimpiezaController(Scanner scan, MisionServices misionService, String id, String descripcion,int idEstado,List<String>puntosEcos, LocalDate fecha, int idNivelDificultad, int idTipoMision ) {
+    public AgregarMisionLimpiezaController(Scanner scan, MisionServices misionService, String id, String descripcion,int idEstado,List<String>puntosEcos, LocalDate fecha, int idNivelDificultad, int idTipoMision ) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.id = id;
@@ -33,7 +33,7 @@ public class MisionLimpiezaController {
         this.idEstado = idEstado;
     }
 
-    public void mostrarMisionLimpiezaController() {
+    public void mostrarAgregarMisionLimpiezaController() {
 
         System.out.println("Seleccione el tipo de limpieza:");
         Arrays.stream(TipoLimpieza.values())

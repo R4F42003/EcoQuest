@@ -48,15 +48,15 @@ public class SelectorMisionController {
 
         switch(idTipoMision){
             case 1 ->{
-                new MisionEducacionController(scan, misionService,id, descripcion,idEstado,puntosEcos,fecha,idNivelDificultad,idTipoMision).mostrarMisionEducacionController();
+                new AgregarMisionEducacionController(scan, misionService,id, descripcion,idEstado,puntosEcos,fecha,idNivelDificultad,idTipoMision).mostrarAgregarMisionEducacionController();
                 return;
             }
             case 2 ->{
-                new MisionLimpiezaController(scan, misionService,id, descripcion,idEstado,puntosEcos,fecha,idNivelDificultad,idTipoMision).mostrarMisionLimpiezaController();
+                new AgregarMisionLimpiezaController(scan, misionService,id, descripcion,idEstado,puntosEcos,fecha,idNivelDificultad,idTipoMision).mostrarAgregarMisionLimpiezaController();
                 return;
             }
             case 3 ->{
-                new MisionPlantacionController(scan, misionService,id, descripcion,idEstado,puntosEcos,fecha,idNivelDificultad,idTipoMision).mostrarMisionPlantacionController();
+                new AgregarMisionPlantacionController(scan, misionService,id, descripcion,idEstado,puntosEcos,fecha,idNivelDificultad,idTipoMision).mostrarAgregarMisionPlantacionController();
                 return;
             }
             case 4 -> {

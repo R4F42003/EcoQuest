@@ -9,7 +9,7 @@ import org.devseniorcode.ecoquest.enums.ZonaPlantacion;
 import org.devseniorcode.ecoquest.models.misiones.MisionPlantacion;
 import org.devseniorcode.ecoquest.services.MisionServices;
 
-public class MisionPlantacionController {
+public class AgregarMisionPlantacionController {
     private final Scanner scan;
     private final MisionServices misionService;
     private final int idTipoMision;
@@ -20,7 +20,7 @@ public class MisionPlantacionController {
     private final LocalDate fecha;
     private final int idNivelDificultad;
 
-    public MisionPlantacionController(Scanner scan, MisionServices misionService, String id, String descripcion,int idEstado,List<String>puntosEcos, LocalDate fecha, int idNivelDificultad, int idTipoMision ) {
+    public AgregarMisionPlantacionController(Scanner scan, MisionServices misionService, String id, String descripcion,int idEstado,List<String>puntosEcos, LocalDate fecha, int idNivelDificultad, int idTipoMision ) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.id = id;
@@ -32,7 +32,7 @@ public class MisionPlantacionController {
         this.idEstado = idEstado;
     }
 
-    public void mostrarMisionPlantacionController(){
+    public void mostrarAgregarMisionPlantacionController(){
         
         System.out.println("Seleccione la zona de la plantacion:");
         Arrays.stream(ZonaPlantacion.values())

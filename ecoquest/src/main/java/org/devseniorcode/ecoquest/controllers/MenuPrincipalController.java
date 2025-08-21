@@ -2,9 +2,11 @@ package org.devseniorcode.ecoquest.controllers;
 
 import java.util.Scanner;
 
-import org.devseniorcode.ecoquest.controllers.mision.MisionController;
+import org.devseniorcode.ecoquest.controllers.mision.AgregarMisionController;
+import org.devseniorcode.ecoquest.controllers.puntoEcologico.AgregarPuntoEcologicoController;
 import org.devseniorcode.ecoquest.controllers.voluntario.AgregarVoluntarioController;
 import org.devseniorcode.ecoquest.services.MisionServices;
+import org.devseniorcode.ecoquest.services.PuntoEcologicoService;
 import org.devseniorcode.ecoquest.services.VoluntarioService;
 
 
@@ -13,12 +15,14 @@ public class MenuPrincipalController {
     private final Scanner scan;
     private final MisionServices misionService;
     private final VoluntarioService voluntarioService;
+    private final PuntoEcologicoService puntoEcologicoService;
 
-    public MenuPrincipalController(Scanner scan, MisionServices misionService, VoluntarioService voluntarioService){
+    public MenuPrincipalController(Scanner scan, MisionServices misionService, VoluntarioService voluntarioService, PuntoEcologicoService puntoEcologicoService){
 
         this.scan = scan;
         this.misionService = misionService;
-        this.voluntarioService = voluntarioService;         
+        this.voluntarioService = voluntarioService; 
+        this.puntoEcologicoService = puntoEcologicoService;        
 
     }
 
@@ -51,10 +55,10 @@ public class MenuPrincipalController {
                 new AgregarVoluntarioController(scan,voluntarioService).mostrarAgregarVoluntarioController();
                 }
             case 2 -> {
-                new MisionController(scan,misionService).mostrarMisionController();
+                new AgregarMisionController(scan,misionService).mostrarAgregarMisionController();
                 }
             case 3 -> {
-                
+                new AgregarPuntoEcologicoController(scan, puntoEcologicoService).mostrarAgregarPuntoEcologicoController();
                 }
             case 4 -> {
                     

@@ -14,7 +14,7 @@ import org.devseniorcode.ecoquest.enums.LugarMisionEducativa;
 import org.devseniorcode.ecoquest.models.misiones.MisionEducacion;
 import org.devseniorcode.ecoquest.services.MisionServices;
 
-class MisionEducacionController {
+class AgregarMisionEducacionController {
     
     private final Scanner scan;
     private final MisionServices misionService;
@@ -27,7 +27,7 @@ class MisionEducacionController {
     private final int idNivelDificultad;
 
     
-    public MisionEducacionController(Scanner scan, MisionServices misionService, String id, String descripcion,int idEstado,List<String>puntosEcos, LocalDate fecha, int idNivelDificultad, int idTipoMision ) {
+    public AgregarMisionEducacionController(Scanner scan, MisionServices misionService, String id, String descripcion,int idEstado,List<String>puntosEcos, LocalDate fecha, int idNivelDificultad, int idTipoMision ) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.id = id;
@@ -39,7 +39,7 @@ class MisionEducacionController {
         this.idEstado = idEstado;
     }
 
-    public void mostrarMisionEducacionController() {
+    public void mostrarAgregarMisionEducacionController() {
         System.out.println("Seleccione el lugar:");
         Arrays.stream(LugarMisionEducativa.values())
             .forEach(lugar -> System.out.println(

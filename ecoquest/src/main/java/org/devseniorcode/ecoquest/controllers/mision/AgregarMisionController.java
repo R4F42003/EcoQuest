@@ -11,18 +11,18 @@ import org.devseniorcode.ecoquest.enums.Estado;
 import org.devseniorcode.ecoquest.services.MisionServices;
 import org.devseniorcode.ecoquest.utils.FechaUtils;
 
-public class MisionController {
+public class AgregarMisionController {
 
     
     private final Scanner scan;
     private final MisionServices misionService;
 
-    public MisionController(Scanner scan, MisionServices misionService) {
+    public AgregarMisionController(Scanner scan, MisionServices misionService) {
         this.scan = scan;
         this.misionService = misionService;
     }
 
-    public void mostrarMisionController(){
+    public void mostrarAgregarMisionController(){
 
         System.out.println("\n== Registrar Mision ==");
 
