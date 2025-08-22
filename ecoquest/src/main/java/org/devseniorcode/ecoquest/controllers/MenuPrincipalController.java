@@ -3,6 +3,7 @@ package org.devseniorcode.ecoquest.controllers;
 import java.util.Scanner;
 
 import org.devseniorcode.ecoquest.controllers.mision.AgregarMisionController;
+import org.devseniorcode.ecoquest.controllers.mision.CompletarMisionController;
 import org.devseniorcode.ecoquest.controllers.puntoEcologico.AgregarPuntoEcologicoController;
 import org.devseniorcode.ecoquest.controllers.voluntario.AgregarVoluntarioController;
 import org.devseniorcode.ecoquest.controllers.voluntario.AsignarMisionVoluntarioController;
@@ -65,7 +66,7 @@ public class MenuPrincipalController {
                 new AsignarMisionVoluntarioController(scan,misionService,voluntarioService).mostrarAsignarMisionVoluntarioController();
                 }
             case 5 -> {
-                   
+                new CompletarMisionController(scan,misionService).mostrarCompletarMisionController();
                 }
             case 6 -> {
                     
