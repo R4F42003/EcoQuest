@@ -7,6 +7,7 @@ import org.devseniorcode.ecoquest.controllers.mision.CompletarMisionController;
 import org.devseniorcode.ecoquest.controllers.puntoEcologico.AgregarPuntoEcologicoController;
 import org.devseniorcode.ecoquest.controllers.voluntario.AgregarVoluntarioController;
 import org.devseniorcode.ecoquest.controllers.voluntario.AsignarMisionVoluntarioController;
+import org.devseniorcode.ecoquest.controllers.voluntario.BuscarVoluntarioPorHabilidadController;
 import org.devseniorcode.ecoquest.services.MisionServices;
 import org.devseniorcode.ecoquest.services.PuntoEcologicoService;
 import org.devseniorcode.ecoquest.services.VoluntarioService;
@@ -69,7 +70,7 @@ public class MenuPrincipalController {
                 new CompletarMisionController(scan,misionService).mostrarCompletarMisionController();
                 }
             case 6 -> {
-                
+                new BuscarVoluntarioPorHabilidadController(scan,voluntarioService).mostrarBuscarVoluntarioPorHabilidadController();
                 }
             case 7 -> {
                 new ReporteController(misionService,voluntarioService).mostrarReporteController();
