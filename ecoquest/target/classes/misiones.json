@@ -214,7 +214,7 @@
   {
     "id": "M020",
     "descripcion": "Charla en hogares geriátricos",
-    "idEstado": 4,
+    "idEstado": 1,
     "puntosEcos": ["PE017", "PE012", "PE016"],
     "fecha": "2025-10-10",
     "idNivelDificultad": 1,

@@ -23,7 +23,6 @@ public class AgregarVoluntarioController {
         String id = scan.nextLine();
         System.out.print("Digite el nombre completo: ");
         String nombre = scan.nextLine();
-
         System.out.print("Digite las habilidades (separadas por comas): ");
         String habilidadesInput =scan.nextLine();
 

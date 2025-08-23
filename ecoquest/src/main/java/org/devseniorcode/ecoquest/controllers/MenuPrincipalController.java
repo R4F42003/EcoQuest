@@ -39,7 +39,7 @@ public class MenuPrincipalController {
 
         int opcion;
         do{
-        System.out.println("/---------|ECOQUEST MENU|---------\\");
+        System.out.println("\n/---------|ECOQUEST MENU|---------\\");
         System.out.println("1. Registrar voluntario");
         System.out.println("2. Registrar mision");
         System.out.println("3. Registrar punto ecologico");
@@ -69,10 +69,10 @@ public class MenuPrincipalController {
                 new CompletarMisionController(scan,misionService).mostrarCompletarMisionController();
                 }
             case 6 -> {
-                    
+                
                 }
             case 7 -> {
-                    
+                new ReporteController(misionService,voluntarioService).mostrarReporteController();
                 }
             case 8 -> {System.out.println("Programa Finalizado");
                     

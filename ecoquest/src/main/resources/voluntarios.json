@@ -137,6 +137,6 @@
     "nombre": "Nicolás Jiménez",
     "habilidades": ["Gestión comunitaria", "Organización"],
     "misionesAsignadas": ["M020", "M014", "M016"],
-    "misionesCompletadas": ["M014", "M016"]
+    "misionesCompletadas": ["M014", "M016", "M020"]
   }
 ]

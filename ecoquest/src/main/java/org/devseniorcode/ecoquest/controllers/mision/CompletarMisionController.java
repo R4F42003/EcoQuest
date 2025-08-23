@@ -20,7 +20,8 @@ public class CompletarMisionController {
         System.out.println("\n== Completar Mision ==");
 
         System.out.println("Misiones disponibles: ");
-        misionServices.listarMisiones()
+        misionServices
+            .listarMisiones()
             .stream()
             .filter(p -> p.getEstado() == Estado.PROGRAMADA)
             .forEach(p -> System.out.println("Id: " + p.getId() + ", descripcion: " + p.getDescripcion()));
