@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.devseniorcode.ecoquest.exceptions.MisionInexistenteExcepcion;
 import org.devseniorcode.ecoquest.models.misiones.Mision;
 import org.devseniorcode.ecoquest.services.MisionServices;
 
@@ -51,10 +52,14 @@ public class MisionServiceImpl implements MisionServices{
     }
 
     @Override
-    public Mision buscarPorId(String id){
-        
-        return misiones.get(id);
-    }
+    public Mision buscarPorId(String id) throws MisionInexistenteExcepcion {
+        Mision mision = misiones.get(id);
+        if (mision == null) {
+            throw new MisionInexistenteExcepcion(id);
+        }
+        return mision;
+}
+
 
 
 }

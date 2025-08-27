@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.devseniorcode.ecoquest.exceptions.VoluntarioIdExistenteExcepcion;
 import org.devseniorcode.ecoquest.models.Voluntario;
 import org.devseniorcode.ecoquest.services.VoluntarioService;
 
@@ -31,9 +32,18 @@ public class VoluntarioServiceImpl implements  VoluntarioService{
             throw new RuntimeException("Error cargando "+ nombreArchivo, e);
         }
     }
-    
+
     @Override
-    public void agregarVoluntarios(Voluntario voluntario){
+        public void agregarVoluntarios(Voluntario voluntario) throws VoluntarioIdExistenteExcepcion {
+        if (voluntario == null || voluntario.getId() == null || voluntario.getId().isBlank()) {
+            throw new IllegalArgumentException("El voluntario y su ID no pueden ser nulos ni vacíos");
+        }
+
+        if (voluntarios.containsKey(voluntario.getId())) {
+            
+            throw new VoluntarioIdExistenteExcepcion(voluntario.getId());
+        }
+
         voluntarios.put(voluntario.getId(), voluntario);
     }
 

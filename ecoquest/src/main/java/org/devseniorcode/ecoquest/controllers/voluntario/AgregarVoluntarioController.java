@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+import org.devseniorcode.ecoquest.exceptions.VoluntarioIdExistenteExcepcion;
 import org.devseniorcode.ecoquest.models.Voluntario;
 import org.devseniorcode.ecoquest.services.VoluntarioService;
 
@@ -19,31 +20,36 @@ public class AgregarVoluntarioController {
     }
 
     public void mostrarAgregarVoluntarioController(){
-        System.out.print("Digite el id: ");
-        String id = scan.nextLine();
-        System.out.print("Digite el nombre completo: ");
-        String nombre = scan.nextLine();
-        System.out.print("Digite las habilidades (separadas por comas): ");
-        String habilidadesInput =scan.nextLine();
+        try{
+            System.out.print("Digite el id: ");
+            String id = scan.nextLine();
+            System.out.print("Digite el nombre completo: ");
+            String nombre = scan.nextLine();
+            System.out.print("Digite las habilidades (separadas por comas): ");
+            String habilidadesInput =scan.nextLine();
 
-        Set<String> habilidades = new HashSet<>();
-        for (String s : habilidadesInput.toLowerCase().split("\\s*,\\s*")){
-            if(!s.isBlank()){
-                habilidades.add(s);
+            Set<String> habilidades = new HashSet<>();
+            for (String s : habilidadesInput.toLowerCase().split("\\s*,\\s*")){
+                if(!s.isBlank()){
+                    habilidades.add(s);
+                }
             }
+
+            Set<String> misionesAsignadas = new HashSet<>();
+
+            Set<String> misionesCompletadas = new HashSet<>();
+            
+            Voluntario nueVoluntario = new Voluntario(id, nombre, habilidades, misionesAsignadas, misionesCompletadas);
+            
+            voluntarioService.agregarVoluntarios(nueVoluntario);
+
+            System.out.println("Voluntario registrado con exito");
+
+        } catch (VoluntarioIdExistenteExcepcion ex) {
+            System.out.println( ex.getMessage());
+        } catch (IllegalArgumentException ex) {
+            System.out.println(" Datos inválidos: " + ex.getMessage());
         }
-
-        Set<String> misionesAsignadas = new HashSet<>();
-
-        Set<String> misionesCompletadas = new HashSet<>();
-        
-        Voluntario nueVoluntario = new Voluntario(id, nombre, habilidades, misionesAsignadas, misionesCompletadas);
-        
-        voluntarioService.agregarVoluntarios(nueVoluntario);
-
-        System.out.println("Voluntario registrado con exito");
-
-        System.out.println(voluntarioService.listarVoluntario());
     }
 
 }

@@ -45,9 +45,6 @@ public class AgregarPuntoEcologicoController{
         puntoEcologicoService.agregarPuntosEcologicos(nuevoPuntoEco);
         System.out.print("Punto Ecologico registrado correctamente");
         
-        System.out.println(puntoEcologicoService.listarPuntosEcologicos());
-
-
     }
 
 }

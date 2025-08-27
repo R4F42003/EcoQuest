@@ -54,8 +54,7 @@ public class AgregarMisionPlantacionController {
         misionService.agregarMisiones(nuevaMision);
 
         System.out.println("Misión registrada con éxito");
-
-        System.out.println(misionService.listarMisiones());        
+      
     }
 
 }

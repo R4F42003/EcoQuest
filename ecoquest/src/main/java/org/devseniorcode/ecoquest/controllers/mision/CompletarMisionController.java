@@ -3,6 +3,7 @@ package org.devseniorcode.ecoquest.controllers.mision;
 import java.util.Scanner;
 
 import org.devseniorcode.ecoquest.enums.Estado;
+import org.devseniorcode.ecoquest.exceptions.MisionInexistenteExcepcion;
 import org.devseniorcode.ecoquest.models.misiones.Mision;
 import org.devseniorcode.ecoquest.services.MisionServices;
 
@@ -30,11 +31,19 @@ public class CompletarMisionController {
         
         String misionId = scan.nextLine();
 
-        Mision misionCompletada = misionServices.buscarPorId(misionId);
+        try {
+            Mision misionCompletada = misionServices.buscarPorId(misionId);
 
-        if(misionId != null){
-            misionCompletada.setEstado(Estado.COMPLETADO);
-        }
+            if (misionCompletada.getEstado() == Estado.COMPLETADO) {
+                System.out.println("La misión ya fue completada previamente.");
+            } else {
+                misionCompletada.setEstado(Estado.COMPLETADO);
+                System.out.println("¡Misión completada con éxito!");
+            }
+        }catch (MisionInexistenteExcepcion e) {
+            System.out.println("Error: " + e.getMessage());
+            }
+
         System.out.println("Mision Completada con exito");
     }
 }
